@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveen's Annual Contributions 2025–2026 | Apsona</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Nunito:wght@700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --blue: #1A4A8A;
+    --accent: #2E8EF7;
+    --gold: #F0A500;
+    --white: #F8FAFF;
+    --gray: #A8B8CC;
+    --card-bg: #0F2645;
+    --border: rgba(46,142,247,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* Grid noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(46,142,247,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46,142,247,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px 60px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,142,247,0.18) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,165,0,0.1) 0%, transparent 70%);
+    top: 20%;
+    right: 10%;
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(46,142,247,0.12);
+    border: 1px solid rgba(46,142,247,0.3);
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 9vw, 110px);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.88;
+    text-align: center;
+    letter-spacing: -2px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.4s;
+  }
+
+  .hero h1 span {
+    display: block;
+    background: linear-gradient(135deg, var(--accent), #8BB8F8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    margin-top: 28px;
+    font-size: 18px;
+    color: var(--gray);
+    font-weight: 300;
+    font-style: italic;
+    max-width: 540px;
+    text-align: center;
+    line-height: 1.75;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.6s;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.8s;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .stat-num span {
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 6px;
+  }
+
+  .scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 48px;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1.2s;
+  }
+
+  .scroll-hint span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollLine 2s ease infinite;
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11,31,58,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  nav a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    padding: 18px 20px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover {
+    color: var(--white);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: -1.5px;
+    line-height: 1.0;
+  }
+
+  .section-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 900;
+    font-style: italic;
+    color: rgba(46,142,247,0.08);
+    line-height: 1;
+    letter-spacing: -3px;
+  }
+
+  /* ── CARDS ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(46,142,247,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(46,142,247,0.15);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .card:hover::before { opacity: 1; }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(46,142,247,0.12);
+    border: 1px solid rgba(46,142,247,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .card-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .card-tag-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: rgba(46,142,247,0.1);
+    border: 1px solid rgba(46,142,247,0.35);
+    color: var(--accent);
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-transform: lowercase;
+  }
+
+  .card-tag-link::after {
+    content: '↗';
+    font-size: 13px;
+    transition: transform 0.2s;
+  }
+
+  .card-tag-link:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46,142,247,0.35);
+  }
+
+  .card-tag-link:hover::after {
+    transform: translate(2px, -2px);
+  }
+  .card.highlight {
+    background: linear-gradient(135deg, rgba(46,142,247,0.15), rgba(46,142,247,0.05));
+    border-color: rgba(46,142,247,0.3);
+  }
+
+  .card.gold {
+    background: linear-gradient(135deg, rgba(240,165,0,0.1), rgba(240,165,0,0.03));
+    border-color: rgba(240,165,0,0.2);
+  }
+
+  .card.gold .card-icon {
+    background: rgba(240,165,0,0.12);
+    border-color: rgba(240,165,0,0.2);
+  }
+
+  .card.gold .card-tag { color: var(--gold); }
+  .card.gold::before { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .card.gold .card-tag-link {
+    background: rgba(240,165,0,0.1);
+    border-color: rgba(240,165,0,0.35);
+    color: var(--gold);
+  }
+
+  .card.gold .card-tag-link:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #000;
+    box-shadow: 0 6px 20px rgba(240,165,0,0.3);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 40px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  footer .logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+
+  footer .logo span { color: var(--accent); }
+
+  footer p {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 300;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .hero-stats { gap: 28px; }
+    .section { padding: 60px 20px; }
+    nav { padding: 0 20px; }
+    .cards { grid-template-columns: 1fr; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .section-count { font-size: 40px; }
+    .divider { margin: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="badge">Apsona Technologies · 2025–2026</div>
+  <h1 style="line-height:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-style:normal;font-size:clamp(48px,7vw,90px);letter-spacing:-1px;color:#E8622A;-webkit-text-fill-color:#E8622A;">Naveen's</span>
+    <span style="font-size:clamp(40px,6vw,80px);">Annual Contributions</span>
+  </h1>
+  <p class="hero-sub">A comprehensive record of work delivered across security, infrastructure, compliance, branding, and operations — 2025 to 2026.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">35<span>+</span></div>
+      <div class="stat-label">Contributions</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Domains</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40<span>+</span></div>
+      <div class="stat-label">Assessments</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <a href="#security">Security</a>
+  <a href="#monitoring">Monitoring</a>
+  <a href="#infra">Infrastructure</a>
+  <a href="#compliance">Compliance</a>
+  <a href="#branding">Branding & Trust</a>
+  <a href="#ops">Operations</a>
+</nav>
+
+<!-- SECURITY -->
+<section class="section" id="security">
+  <div class="section-header">
+    <div>
+      <div class="section-label">01 — Security</div>
+      <div class="section-title">Security &<br>Vulnerability Mgmt</div>
+    </div>
+    <div class="section-count">07</div>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>Snyk Integration</h3>
+      <p>Worked with individual developers, configured and guided them on Snyk vulnerability scanning at the development level to identify and remediate security issues before code reaches production.</p>
+      <span class="card-tag">Dev-level Security</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>ZAP VAPT – Linode Servers</h3>
+      <p>Performed VAPT testing using OWASP ZAP on Linode servers to identify security gaps and risks across exposed services and endpoints.</p>
+      <span class="card-tag">Penetration Testing</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <h3>Lynis Server Hardening</h3>
+      <p>Hardened server configurations using Lynis across the infrastructure, improving overall server security posture by 20%.</p>
+      <span class="card-tag">+20% Security Score</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">📊</div>
+      <h3>Quarterly Vulnerability Assessment</h3>
+      <p>Took initiative to establish a quarterly VA reporting cadence, proactively identifying and tracking vulnerabilities across infrastructure on a recurring basis.</p>
+      <span class="card-tag">Recurring Initiative</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔭</div>
+      <h3>OpenVAS Vulnerability Scanner</h3>
+      <p>Deployed and configured OpenVAS as the primary vulnerability scanner for Apsona. Now powers all quarterly VA assessments across production infrastructure.</p>
+      <span class="card-tag">Infrastructure Scanner</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺️</div>
+      <h3>Nmap – Production Servers</h3>
+      <p>Performed comprehensive Nmap scans across all production servers to identify open ports and exposed endpoints that pose security risk.</p>
+      <span class="card-tag">Attack Surface Mapping</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">🔐</div>
+      <h3>Bastion Host & SSH Hardening</h3>
+      <p>Mitigated continuous brute force attacks by introducing a bastion host, disabling root and password-based login. All server access is now restricted to jump server with SSH key authentication only.</p>
+      <span class="card-tag">Incident Response</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MONITORING -->
+<section class="section" id="monitoring">
+  <div class="section-header">
+    <div>
+      <div class="section-label">02 — Monitoring</div>
+      <div class="section-title">Monitoring<br>& Alerting</div>
+    </div>
+    <div class="section-count">03</div>
+  </div>
+  <div class="cards">
+    <div class="card highlight">
+      <div class="card-icon">👁️</div>
+      <h3>Wazuh HIDS Deployment</h3>
+      <p>Deployed Wazuh Host-based Intrusion Detection System across all servers and enabled MITRE ATT&CK framework integration for active threat intelligence monitoring across the entire fleet.</p>
+      <span class="card-tag">Threat Intelligence</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔔</div>
+      <h3>Garana → Slack Alerts</h3>
+      <p>Configured CPU spike alerts at 35% threshold sustained over 5 minutes for PDF servers. Enables proactive detection of stuck processes and LibreOffice crashes before service degradation occurs.</p>
+      <span class="card-tag">Proactive Alerting</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">📡</div>
+      <h3>CPU Spike Alerts – All Servers</h3>
+      <p>Extended CPU threshold alerting to all servers via Slack, enabling the team to action anomalies proactively across the entire infrastructure footprint.</p>
+      <span class="card-tag">Full Coverage</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INFRASTRUCTURE -->
+<section class="section" id="infra">
+  <div class="section-header">
+    <div>
+      <div class="section-label">03 — Infrastructure</div>
+      <div class="section-title">Infrastructure<br>& DevOps</div>
+    </div>
+    <div class="section-count">07</div>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <h3>Europe Server Setup</h3>
+      <p>Deployed Business LMO server and PDF server in EU region, mirroring the US setup to serve EU customers with data residency compliance requirements.</p>
+      <span class="card-tag">EU Expansion</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">🔑</div>
+      <h3>HashiCorp Vault Deployment</h3>
+      <p>Configured a self-hosted HashiCorp Vault server on Linode for centralized management of API tokens, client IDs, and client secrets — significantly improving secrets security posture.</p>
+      <span class="card-tag">Secrets Management</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">⚙️</div>
+      <h3>Triggered Merge Infra Setup</h3>
+      <p>Configured full Terraform-based QA and Production infrastructure for Triggered Merge covering ECS, ECR, Lambda, API Gateway, ACM, Load Balancer, VPC, RabbitMQ, and ElastiCache. Slack alerts configured for both environments.</p>
+      <span class="card-tag">Multi-service Terraform</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🖥️</div>
+      <h3>New PDF Servers – Ubuntu 22</h3>
+      <p>Launched new PDF servers on Ubuntu 22 LTS to leverage the latest security patches and OS support, enabling LibreOffice upgrade with rich text rendering capabilities.</p>
+      <span class="card-tag">OS Modernization</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">⬆️</div>
+      <h3>Host Upgrade – Gen1 to Gen3</h3>
+      <p>Upgraded 3 PDF servers from Gen1 shared hardware to Gen3 dedicated hosts, delivering meaningful improvements in performance and reliability.</p>
+      <span class="card-tag">3 Servers Upgraded</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗄️</div>
+      <h3>Isolated Postgres Server</h3>
+      <p>Decoupled Postgres from the LMO server and migrated all schemas and tables to Linode Managed Postgres, modernizing the architecture and improving database redundancy significantly.</p>
+      <span class="card-tag">High Redundancy</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Terraform for Disaster Recovery</h3>
+      <p>Configured Terraform modules to enable rapid deployment of Triggered Merge infrastructure across multiple environments, supporting disaster recovery readiness and multi-environment parity.</p>
+      <span class="card-tag">DR Readiness</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPLIANCE -->
+<section class="section" id="compliance">
+  <div class="section-header">
+    <div>
+      <div class="section-label">04 — Compliance</div>
+      <div class="section-title">Compliance<br>& Governance</div>
+    </div>
+    <div class="section-count">07</div>
+  </div>
+  <div class="cards">
+    <div class="card gold">
+      <div class="card-icon">🏆</div>
+      <h3>SOC2 Type II</h3>
+      <p>Rigorously worked with Neumetric (external audit vendor) to achieve SOC2 Type II certification. Standardized and version-controlled compliance documents for reuse in upcoming annual renewals.</p>
+      <span class="card-tag">Certification Achieved</span>
+    </div>
+    <div class="card gold">
+      <div class="card-icon">🎓</div>
+      <h3>HECVAT</h3>
+      <p>Extensively gathered evidence and data points, and completed hundreds of detailed questions across the HECVAT questionnaire to achieve certification for higher education customers.</p>
+      <span class="card-tag">Higher Ed Compliance</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🪪</div>
+      <h3>JumpCloud Core Certification</h3>
+      <p>Achieved JumpCloud Core Certification, demonstrating expertise in identity and device management — JumpCloud being central to Apsona's IT operations and access control.</p>
+      <span class="card-tag">Personal Certification</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🇪🇺</div>
+      <h3>GDPR Foundation</h3>
+      <p>Completed foundational GDPR compliance work to support Apsona's EU market operations and data protection obligations for European customers.</p>
+      <span class="card-tag">EU Market Readiness</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">💰</div>
+      <h3>DRATA vs Sprinto Evaluation</h3>
+      <p>Performed a detailed comparative evaluation of DRATA and Sprinto as GRC platforms. Finalized Sprinto, optimizing compliance tooling cost for the company by 50%.</p>
+      <span class="card-tag">50% Cost Reduction</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>ISMS Documentation</h3>
+      <p>Created and published a comprehensive set of Information Security Management System documents, standardized for reuse and versioning across audits and renewals.</p>
+      <span class="card-tag">Document Standardization</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚖️</div>
+      <h3>Privacy Policy & ToS Update</h3>
+      <p>Collaborated with Barbara and Apsona's attorney to identify and close gaps in the Privacy Policy and Terms of Service, ensuring legal alignment and compliance.</p>
+      <span class="card-tag">Legal Alignment</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BRANDING & TRUST -->
+<section class="section" id="branding">
+  <div class="section-header">
+    <div>
+      <div class="section-label">05 — Branding</div>
+      <div class="section-title">Branding<br>& Trust</div>
+    </div>
+    <div class="section-count">06</div>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🎨</div>
+      <h3>Apsona Icon</h3>
+      <p>Derived the Apsona icon from the full logo for use across Slack workspaces, browser favicons, and published sites — establishing a consistent, recognizable visual identity.</p>
+      <span class="card-tag">Brand Identity</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Apsona Favicon</h3>
+      <p>Introduced favicons across Apsona's WordPress-hosted websites, replacing the default grey globe icon and adding meaningful brand recognition across all web properties.</p>
+      <span class="card-tag">Web Branding</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">📊</div>
+      <h3>Apsona Status Page</h3>
+      <p>Deployed a customer-facing status page (status.apsona.com) listing all core services with uptime metrics, maintenance windows, and full incident management with customer subscription support.</p>
+      <a href="https://status.apsona.com" target="_blank" rel="noopener" class="card-tag card-tag-link">status.apsona.com</a>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">✅</div>
+      <h3>Apsona Compliance Page</h3>
+      <p>Published a compliance page showcasing SOC2 and HECVAT achievements with a document request form for enterprise customers requiring compliance evidence.</p>
+      <a href="https://apsona.com/compliance" target="_blank" rel="noopener" class="card-tag card-tag-link">apsona.com/compliance</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏛️</div>
+      <h3>Trust Centre POC</h3>
+      <p>Developed a Trust Centre proof of concept (trust.apsona.com), evaluating enterprise trust requirements and defining the use cases for Apsona's security transparency posture.</p>
+      <a href="https://trust.apsona.com" target="_blank" rel="noopener" class="card-tag card-tag-link">trust.apsona.com</a>
+    </div>
+    <div class="card gold">
+      <div class="card-icon">♿</div>
+      <h3>VPAT Compliance Page</h3>
+      <p>Published the internal development roadmap for VPAT compliance (vpat.apsona.com), supporting accessibility-required customers and vendor technical and security review processes.</p>
+      <a href="https://vpat.apsona.com" target="_blank" rel="noopener" class="card-tag card-tag-link">vpat.apsona.com</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OPERATIONS -->
+<section class="section" id="ops">
+  <div class="section-header">
+    <div>
+      <div class="section-label">06 — Operations</div>
+      <div class="section-title">Operations<br>& Administration</div>
+    </div>
+    <div class="section-count">06</div>
+  </div>
+  <div class="cards">
+    <div class="card gold">
+      <div class="card-icon">📝</div>
+      <h3>Customer Procurement – Zero Reverts</h3>
+      <p>Handled 40+ security and risk assessments with zero reverts, including extensive vendor questionnaires of 400–500 questions each for enterprise customer procurement processes.</p>
+      <span class="card-tag">40+ Assessments</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <h3>IT Admin Operations</h3>
+      <p>Streamlined IT admin processes and employee onboarding workflows to improve consistency, reduce manual overhead, and establish repeatable processes for the team.</p>
+      <span class="card-tag">Process Efficiency</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">☁️</div>
+      <h3>SF Admin Operations</h3>
+      <p>Took ownership of Salesforce Admin team operations — managing deliverables, stakeholder alignment, and process improvements across multiple cross-functional departments.</p>
+      <span class="card-tag">Cross-functional</span>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">🔒</div>
+      <h3>1Password → JumpCloud Migration</h3>
+      <p>Migrated entire Apsona staff from 1Password to JumpCloud Password Manager, including manual migration of leadership personal vaults to ensure complete coverage.</p>
+      <span class="card-tag">Full Staff Migration</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h3>Calendly → Zoom Scheduler</h3>
+      <p>Migrated all Apsona staff from Calendly to Zoom Scheduler, consolidating scheduling tooling and reducing licensing overhead across the organization.</p>
+      <span class="card-tag">Tool Consolidation</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">💳</div>
+      <h3>Software Billing & Licence Management</h3>
+      <p>Worked with Akhil to forecast and manage the software licence budget, ensuring cost visibility, vendor accountability, and renewal planning across all tools and subscriptions.</p>
+      <span class="card-tag">Cost Governance</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo"><span style="color: #000000;">ap</span><span style="color: #C13E0E;">sona</span></div>
+  <p>Annual Contributions Report &nbsp;·&nbsp; 2025 – 2026 &nbsp;·&nbsp; Apsona Technologies</p>
+</footer>
+
+<script>
+  // Intersection observer for card animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const siblings = [...card.parentElement.children];
+        const index = siblings.indexOf(card);
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, index * 80);
+        observer.unobserve(card);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card').forEach(card => observer.observe(card));
+</script>
+</body>
+</html>
